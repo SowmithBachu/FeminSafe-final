@@ -1,0 +1,71 @@
+#video {
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#canvas {
+    pointer-events: none;
+    border-radius: 1rem;
+}
+
+.status-active {
+    animation: pulse 2s infinite;
+}
+
+.glow-text {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+                 0 0 20px rgba(255, 255, 255, 0.3),
+                 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+                     0 0 20px rgba(255, 255, 255, 0.3),
+                     0 0 30px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        opacity: 0.5;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.3),
+                     0 0 10px rgba(255, 255, 255, 0.2),
+                     0 0 15px rgba(255, 255, 255, 0.1);
+    }
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+                     0 0 20px rgba(255, 255, 255, 0.3),
+                     0 0 30px rgba(255, 255, 255, 0.2);
+    }
+}
+
+/* Glassmorphism effect */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Button hover effects */
+button {
+    position: relative;
+    overflow: hidden;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    transition: transform 0.5s;
+}
+
+button:hover::after {
+    transform: rotate(45deg) translate(50%, 50%);
+} 

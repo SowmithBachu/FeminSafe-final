@@ -1,0 +1,193 @@
+/* Base styles */
+:root {
+    --primary: #ff69b4;
+    --primary-dark: #ff1493;
+    --secondary: #4a90e2;
+    --background: #ffffff;
+    --text: #2d3748;
+    --text-secondary: #718096;
+}
+
+.dark {
+    --background: #1a202c;
+    --text: #f7fafc;
+    --text-secondary: #a0aec0;
+}
+
+/* Smooth transitions */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Three.js canvas positioning */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Form styles */
+.form-input {
+    background-color: transparent;
+    border: 2px solid var(--text-secondary);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    outline: none;
+    color: var(--text);
+}
+
+.form-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(255, 105, 180, 0.2);
+}
+
+/* Button hover effects */
+.submit-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.submit-button:hover::after {
+    width: 300%;
+    height: 300%;
+}
+
+/* Checkbox custom styling */
+.custom-checkbox {
+    position: relative;
+    cursor: pointer;
+    padding-left: 2rem;
+    user-select: none;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.25rem;
+    width: 1.25rem;
+    background-color: transparent;
+    border: 2px solid var(--text-secondary);
+    border-radius: 0.25rem;
+}
+
+.custom-checkbox:hover input ~ .checkmark {
+    border-color: var(--primary);
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Loading animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading {
+    display: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+}
+
+.submit-button.loading .loading {
+    display: inline-block;
+}
+
+/* Theme toggle animation */
+.theme-toggle {
+    position: relative;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid var(--text-secondary);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.theme-toggle:hover {
+    border-color: var(--primary);
+}
+
+.theme-toggle svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: var(--text);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.dark .theme-toggle .sun {
+    transform: translate(-50%, -50%) rotate(180deg);
+    opacity: 0;
+}
+
+.dark .theme-toggle .moon {
+    transform: translate(-50%, -50%) rotate(0);
+    opacity: 1;
+}
+
+.theme-toggle .sun {
+    opacity: 1;
+}
+
+.theme-toggle .moon {
+    transform: translate(-50%, -50%) rotate(-180deg);
+    opacity: 0;
+} 

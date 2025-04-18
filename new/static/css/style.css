@@ -1,0 +1,161 @@
+#video {
+    max-height: 600px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+#canvas {
+    pointer-events: none;
+    border-radius: 1rem;
+}
+
+.status-active {
+    animation: pulse 2s infinite;
+}
+
+.glow-text {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+                 0 0 20px rgba(255, 255, 255, 0.3),
+                 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+                     0 0 20px rgba(255, 255, 255, 0.3),
+                     0 0 30px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        opacity: 0.5;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.3),
+                     0 0 10px rgba(255, 255, 255, 0.2),
+                     0 0 15px rgba(255, 255, 255, 0.1);
+    }
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+                     0 0 20px rgba(255, 255, 255, 0.3),
+                     0 0 30px rgba(255, 255, 255, 0.2);
+    }
+}
+
+/* Glassmorphism effect */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Button hover effects */
+button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.2)
+    );
+    transform: rotate(45deg);
+    transition: transform 0.5s;
+}
+
+button:hover::after {
+    transform: rotate(45deg) translate(50%, 50%);
+}
+
+/* Card hover effects */
+.bg-white\/5 {
+    transition: all 0.3s ease;
+}
+
+.bg-white\/5:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Zone indicators */
+.zone-indicator {
+    position: absolute;
+    border: 2px dashed rgba(255, 105, 180, 0.5);
+    border-radius: 0.5rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.zone-indicator:hover {
+    border-color: rgba(255, 105, 180, 0.8);
+}
+
+/* Alert bar animations */
+.alert-bar-transition {
+    transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 105, 180, 0.5);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 105, 180, 0.7);
+}
+
+/* Location card animations */
+.location-card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.location-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Alert status animations */
+@keyframes alertPulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#alert-status.critical {
+    animation: alertPulse 1s infinite;
+}
+
+/* Gradient text effect */
+.gradient-text {
+    background: linear-gradient(to right, #FF69B4, #9F7AEA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+} 

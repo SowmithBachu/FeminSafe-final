@@ -1,0 +1,237 @@
+// ... existing code ...
+            <!-- Location Analytics with Quick Actions Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                <!-- Location Analytics (Compact) -->
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-2xl font-bold text-white">Location Analytics</h2>
+                        <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">Live Updates</span>
+                    </div>
+                    <div class="space-y-3">
+                        <!-- Washroom Area -->
+                        <div class="bg-white/5 p-3 rounded-lg">
+                            <div class="flex justify-between items-center mb-2">
+                                <div>
+                                    <h3 class="text-white text-sm">Washroom Area</h3>
+                                    <div class="flex items-center space-x-2 mt-1">
+                                        <span class="text-2xl font-bold text-pink-400" id="washroom-count">0</span>
+                                        <div class="flex flex-col text-xs text-gray-400">
+                                            <span class="text-green-400">↑ <span id="washroom-in">0</span> in</span>
+                                            <span class="text-red-400">↓ <span id="washroom-out">0</span> out</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-end">
+                                    <span class="text-xs text-gray-400">Capacity</span>
+                                    <span class="text-sm text-white">12/20</span>
+                                </div>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5">
+                                <div class="bg-pink-500 h-1.5 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Library -->
+                        <div class="bg-white/5 p-3 rounded-lg">
+                            <div class="flex justify-between items-center mb-2">
+                                <div>
+                                    <h3 class="text-white text-sm">Library</h3>
+                                    <div class="flex items-center space-x-2 mt-1">
+                                        <span class="text-2xl font-bold text-purple-400" id="library-count">0</span>
+                                        <div class="flex flex-col text-xs text-gray-400">
+                                            <span class="text-green-400">↑ <span id="library-in">0</span> in</span>
+                                            <span class="text-red-400">↓ <span id="library-out">0</span> out</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-end">
+                                    <span class="text-xs text-gray-400">Capacity</span>
+                                    <span class="text-sm text-white">45/100</span>
+                                </div>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5">
+                                <div class="bg-purple-500 h-1.5 rounded-full" style="width: 45%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Common Room -->
+                        <div class="bg-white/5 p-3 rounded-lg">
+                            <div class="flex justify-between items-center mb-2">
+                                <div>
+                                    <h3 class="text-white text-sm">Common Room</h3>
+                                    <div class="flex items-center space-x-2 mt-1">
+                                        <span class="text-2xl font-bold text-blue-400" id="common-count">0</span>
+                                        <div class="flex flex-col text-xs text-gray-400">
+                                            <span class="text-green-400">↑ <span id="common-in">0</span> in</span>
+                                            <span class="text-red-400">↓ <span id="common-out">0</span> out</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-end">
+                                    <span class="text-xs text-gray-400">Capacity</span>
+                                    <span class="text-sm text-white">30/50</span>
+                                </div>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5">
+                                <div class="bg-blue-500 h-1.5 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions (Enhanced) -->
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6">
+                    <h2 class="text-2xl font-bold text-white mb-4">Quick Actions</h2>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button class="p-4 bg-red-500/20 hover:bg-red-500/30 rounded-lg transition group">
+                            <div class="flex flex-col items-center">
+                                <svg class="w-8 h-8 text-red-500 mb-2 group-hover:scale-110 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                                <span class="text-red-400 text-sm font-medium">Emergency Lock</span>
+                            </div>
+                        </button>
+                        <button class="p-4 bg-yellow-500/20 hover:bg-yellow-500/30 rounded-lg transition group">
+                            <div class="flex flex-col items-center">
+                                <svg class="w-8 h-8 text-yellow-500 mb-2 group-hover:scale-110 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                                </svg>
+                                <span class="text-yellow-400 text-sm font-medium">Alert Security</span>
+                            </div>
+                        </button>
+                        <button class="p-4 bg-blue-500/20 hover:bg-blue-500/30 rounded-lg transition group">
+                            <div class="flex flex-col items-center">
+                                <svg class="w-8 h-8 text-blue-500 mb-2 group-hover:scale-110 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                </svg>
+                                <span class="text-blue-400 text-sm font-medium">Notify Parents</span>
+                            </div>
+                        </button>
+                        <button class="p-4 bg-green-500/20 hover:bg-green-500/30 rounded-lg transition group">
+                            <div class="flex flex-col items-center">
+                                <svg class="w-8 h-8 text-green-500 mb-2 group-hover:scale-110 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                                </svg>
+                                <span class="text-green-400 text-sm font-medium">Generate Report</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Restricted Area Status (Enhanced) -->
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-2xl font-bold text-white">Restricted Areas</h2>
+                        <div class="flex items-center space-x-2">
+                            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                            <span class="text-sm text-green-400">All Systems Active</span>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-white/5 p-3 rounded-lg">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <span class="text-white">Women's Restroom</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-xs text-gray-400">Last check: 2m ago</span>
+                                    <span class="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs">Secure</span>
+                                </div>
+                            </div>
+                            <div class="mt-2 flex items-center justify-between text-xs text-gray-400">
+                                <span>Access attempts: 24</span>
+                                <span>Violations: 0</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white/5 p-3 rounded-lg">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <span class="text-white">Girls' Common Room</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-xs text-gray-400">Last check: 1m ago</span>
+                                    <span class="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs">Secure</span>
+                                </div>
+                            </div>
+                            <div class="mt-2 flex items-center justify-between text-xs text-gray-400">
+                                <span>Access attempts: 56</span>
+                                <span>Violations: 1</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white/5 p-3 rounded-lg">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <span class="text-white">Female Faculty Area</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-xs text-gray-400">Last check: 30s ago</span>
+                                    <span class="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs">Secure</span>
+                                </div>
+                            </div>
+                            <div class="mt-2 flex items-center justify-between text-xs text-gray-400">
+                                <span>Access attempts: 18</span>
+                                <span>Violations: 0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+            // ... existing script content ...
+
+            // Function to update location counts and movement
+            function updateLocationCounts() {
+                const locations = ['washroom', 'library', 'common'];
+                
+                locations.forEach(location => {
+                    // Generate random movement
+                    const entering = Math.floor(Math.random() * 3);
+                    const leaving = Math.floor(Math.random() * 2);
+                    
+                    // Update in/out counts
+                    const currentIn = parseInt(document.getElementById(`${location}-in`).textContent);
+                    const currentOut = parseInt(document.getElementById(`${location}-out`).textContent);
+                    
+                    document.getElementById(`${location}-in`).textContent = currentIn + entering;
+                    document.getElementById(`${location}-out`).textContent = currentOut + leaving;
+                    
+                    // Update total count
+                    const totalCount = Math.max(0, currentIn + entering - (currentOut + leaving));
+                    document.getElementById(`${location}-count`).textContent = totalCount;
+                });
+            }
+
+            // Update counts every 5 seconds
+            setInterval(updateLocationCounts, 5000);
+            updateLocationCounts(); // Initial update
+
+            // Enhanced Quick Actions
+            document.querySelectorAll('.grid.grid-cols-2 button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const action = this.querySelector('span').textContent;
+                    // Add visual feedback
+                    this.classList.add('scale-95');
+                    setTimeout(() => this.classList.remove('scale-95'), 200);
+                    
+                    // Add to alerts
+                    genderBasedAlerts.unshift({
+                        type: this.classList.contains('bg-red-500/20') ? 'danger' : 
+                              this.classList.contains('bg-yellow-500/20') ? 'warning' : 'info',
+                        location: 'System',
+                        time: 'Just now',
+                        message: `${action} initiated`,
+                        details: 'Action in progress'
+                    });
+                    updateAlertsContainer();
+                });
+            });
+
+            // ... rest of existing script content ...
+            </script>
+// ... rest of existing code ...
